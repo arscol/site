@@ -1,0 +1,7 @@
+{{ range .Pages }}
+<article class="bit">
+    <p class="bit-signature"><span class="bit-author-name"><b>Carlos</b></span> @arscol · {{ .Date.Format "2 Jan 2006"
+        }}</p>
+    <p>{{ .Content }}</p>
+</article>
+{{ end }}
