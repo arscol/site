@@ -1,0 +1,41 @@
+# Archivos generados por Hugo
+/public/
+/resources/_gen/
+
+# Entorno de desarrollo
+/.hugo_build.lock
+
+# Dependencias y módulos
+/node_modules/
+/assets/node_modules/
+
+# Archivos de IDE y editor
+/.idea/
+/.vscode/
+*.swp
+*.swo
+*.sublime-*
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de caché
+/.cache/
+
+# Archivos de entorno
+.env
+.env.local
+
+# Archivos de usuario
+.hugo_build.lock
+
+# Archivos de depuración
+debug.log
+
+# Archivos de temas (si usas git submodules)
+/themes/*/
+!/themes/your-theme/  # Excepto tu tema personalizado
+
+# Si usas Netlify
+.netlify/

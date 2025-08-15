@@ -1,0 +1,19 @@
+baseURL = 'https://arscol.dev/'
+languageCode = 'en-us'
+title = 'arscol.dev'
+relativeURLs = true
+canonifyURLs = false
+
+[params]
+  description = "Un sitio web personal hecho con Hugo"
+  logo = "/img/logo.png"
+  me = "/img/me.jpg"
+  github = "/img/github.png"
+
+[server]
+  [[server.errorPages]]
+    code = 404
+    url = "/404.html"
+
+[markup.goldmark.renderer]
+  unsafe = true  # Permite HTML raw

@@ -1,0 +1,8 @@
+{{ range .Pages }}
+<a href="{{ .RelPermalink }}" class="no-decorate">
+    <article class="post-item">
+        <p class="post-signature">{{ .Date.Format "2 Jan 2006" }}</p>
+        <p><u>{{ .Title }}</u> -></p>
+    </article>
+</a>
+{{ end }}

@@ -1,0 +1,32 @@
+{{ define "title" }}
+arscol
+{{ end }}
+
+{{ define "content" }}
+<div class="content">
+    {{ partial "intro.html" . }}
+
+    {{ partial "timeline.html" . }}
+
+    {{ partial "social.html" . }}
+</div>
+{{ end }}
+
+{{ define "script" }}
+<script>
+    var i = 0;
+    var tx = "One of my hobbies is collecting vinyl records. Mostly rock & electronic. My collection isn't huge (~300 records) because I'm a little bit picky choosing albums, but I'm proud of it.";
+
+    function typeWriter() {
+        if (i < tx.length) {
+            document.getElementById("about-4").innerHTML += tx.charAt(i);
+            i++;
+            setTimeout(typeWriter, 25);
+        }
+    }
+
+    setTimeout(() => {
+        typeWriter();
+    }, 1500);
+</script>
+{{ end }}
