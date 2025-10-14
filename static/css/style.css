@@ -166,6 +166,41 @@ footer p,
     align-items: center;
 }
 
+/* Projects page specific styles */
+.projects-content {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+/* Specific styles for projects page to override any conflicting styles */
+.projects-content #projects {
+    margin: var(--spacing-xl) auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Ensure project items are centered within the projects container */
+.projects-content #projects .project-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Override any text-align: left that might be inherited */
+.projects-content #projects .project-item a {
+    text-align: center;
+}
+
+.projects-content #projects .project-item img {
+    display: block;
+    margin: 0 auto;
+}
+
 .text-content {
     padding: 0 20%;
 }
@@ -297,6 +332,43 @@ footer p,
     border-radius: var(--border-radius-small);
 }
 
+#projects {
+    margin: var(--spacing-xl) auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-medium);
+    max-width: 1200px;
+    width: 100%;
+}
+
+.project-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-item a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+}
+
+.project {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--border-radius-small);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid var(--primary-color);
+}
+
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
 .error-message {
     display: flex;
     flex-direction: column;
@@ -341,6 +413,21 @@ footer p,
         height: 300px;
         margin: var(--spacing-small);
     }
+
+    #projects {
+        margin: var(--spacing-large);
+        gap: var(--spacing-small);
+        justify-content: center;
+    }
+
+    .project-item {
+        justify-content: center;
+    }
+
+    .project {
+        width: 250px;
+        height: 150px;
+    }
 }
 
 @media (max-width: 1300px) {
@@ -378,5 +465,19 @@ footer p,
         margin: var(--spacing-small);
         padding: var(--spacing-small);
         width: 90%;
+    }
+
+    #projects {
+        margin: var(--spacing-large) var(--spacing-small);
+        justify-content: center;
+    }
+
+    .project-item {
+        justify-content: center;
+    }
+
+    .project {
+        width: 250px;
+        height: 150px;
     }
 }
