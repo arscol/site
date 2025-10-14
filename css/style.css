@@ -1,3 +1,30 @@
+/* CSS Custom Properties for better maintainability */
+:root {
+    --primary-color: #3c4e28;
+    --accent-color: #01ae81;
+    --background-color: #c3d59b;
+    --light-blue: #a3e3f1;
+    --gray: #666;
+    --slategray: slategray;
+    --slategrey: slategrey;
+
+    --font-size-base: 11px;
+    --font-size-large: 22px;
+    --font-size-h1: 33px;
+    --font-size-small: 17px;
+    --font-size-medium: 19px;
+    --font-size-post-title: 30px;
+
+    --spacing-small: 10px;
+    --spacing-medium: 20px;
+    --spacing-large: 50px;
+    --spacing-xl: 100px;
+
+    --border-radius-small: 5%;
+    --border-radius-medium: 15px;
+    --border-radius-circle: 50%;
+}
+
 @font-face {
     font-family: "departure-mono";
     src:
@@ -11,16 +38,16 @@ body,
 h1,
 p {
     font-family: "departure-mono", sans-serif;
-    color: #3c4e28;
+    color: var(--primary-color);
 }
 
 body {
-    font-size: 11px;
-    background-color: #c3d59b;
+    font-size: var(--font-size-base);
+    background-color: var(--background-color);
 }
 
 h1 {
-    font-size: 33px;
+    font-size: var(--font-size-h1);
     align-items: center;
     display: flex;
     height: 45px;
@@ -28,11 +55,11 @@ h1 {
 
 p,
 a {
-    font-size: 22px;
+    font-size: var(--font-size-large);
 }
 
 a {
-    color: #01ae81;
+    color: var(--accent-color);
     text-decoration: none;
 }
 
@@ -61,13 +88,13 @@ footer {
 }
 
 header {
-    padding: 20px 50px 0 50px;
+    padding: var(--spacing-medium) var(--spacing-large) 0 var(--spacing-large);
     flex-wrap: wrap;
 }
 
 header .links-container {
     margin-left: auto;
-    font-size: 22px;
+    font-size: var(--font-size-large);
 }
 
 #logo-link {
@@ -80,11 +107,11 @@ main {
 
 #me {
     display: block;
-    margin: 0 auto 100px auto;
+    margin: 0 auto var(--spacing-xl) auto;
     width: 400px;
     height: 400px;
-    border-radius: 50%;
-    border: solid 3px #3c4e28;
+    border-radius: var(--border-radius-circle);
+    border: solid 3px var(--primary-color);
 }
 
 .about {
@@ -98,7 +125,7 @@ main {
 footer {
     position: relative;
     bottom: 0;
-    padding: 20px 0;
+    padding: var(--spacing-medium) 0;
     z-index: 10;
     width: 100%;
     height: 150px;
@@ -111,7 +138,7 @@ footer p,
 }
 
 .highlight {
-    color: #01ae81;
+    color: var(--accent-color);
 }
 
 .no-decorate {
@@ -121,9 +148,9 @@ footer p,
 
 .logo {
     height: 6.5em;
-    font-size: 11px;
-    padding-top: 10px;
-    margin-right: 20px;
+    font-size: var(--font-size-base);
+    padding-top: var(--spacing-small);
+    margin-right: var(--spacing-medium);
 }
 
 .logo-footer {
@@ -139,17 +166,52 @@ footer p,
     align-items: center;
 }
 
+/* Projects page specific styles */
+.projects-content {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+/* Specific styles for projects page to override any conflicting styles */
+.projects-content #projects {
+    margin: var(--spacing-xl) auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Ensure project items are centered within the projects container */
+.projects-content #projects .project-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Override any text-align: left that might be inherited */
+.projects-content #projects .project-item a {
+    text-align: center;
+}
+
+.projects-content #projects .project-item img {
+    display: block;
+    margin: 0 auto;
+}
+
 .text-content {
     padding: 0 20%;
 }
 
 #timeline-intro {
-    padding: 0 50px;
+    padding: 0 var(--spacing-large);
 }
 
 .text-content,
 .timeline-block {
-    margin: 100px 0;
+    margin: var(--spacing-xl) 0;
 }
 
 .timeline-content {
@@ -176,7 +238,7 @@ footer p,
     left: 50%;
     width: 3px;
     margin-left: -1.5px;
-    background: #3c4e28;
+    background: var(--primary-color);
 }
 
 .timeline-block {
@@ -189,18 +251,18 @@ footer p,
 .timeline-block:nth-child(odd) .timeline-item {
     align-self: flex-start;
     text-align: left;
-    padding-right: 50px;
+    padding-right: var(--spacing-large);
 }
 
 .timeline-block:nth-child(even) .timeline-item {
     align-self: flex-end;
     text-align: left;
-    padding-left: 50px;
+    padding-left: var(--spacing-large);
 }
 
 .timeline-item {
     width: 40%;
-    padding: 20px 40px;
+    padding: var(--spacing-medium) 40px;
     clear: both;
     text-align: left;
 }
@@ -208,41 +270,41 @@ footer p,
 #bits,
 #posts,
 #post {
-    margin: 100px 300px;
-    padding: 0 50px;
+    margin: var(--spacing-xl) 300px;
+    padding: 0 var(--spacing-large);
     text-align: left;
 }
 
 .bit {
     padding: 15px;
-    border: dotted 4px slategrey;
-    border-radius: 15px;
+    border: dotted 4px var(--slategrey);
+    border-radius: var(--border-radius-medium);
     width: 768px;
-    background-color: #a3e3f1;
-    margin: 20px 0;
+    background-color: var(--light-blue);
+    margin: var(--spacing-medium) 0;
 }
 
 .post-item {
     padding: 15px;
     width: 1000px;
-    margin: 20px 0;
+    margin: var(--spacing-medium) 0;
 }
 
 .post-title {
-    font-size: 30px;
-    margin-top: 50px;
-    padding-bottom: 10px;
+    font-size: var(--font-size-post-title);
+    margin-top: var(--spacing-large);
+    padding-bottom: var(--spacing-small);
 }
 
 .bit-signature {
-    font-size: 17px;
+    font-size: var(--font-size-small);
     color: gray;
     margin-bottom: 15px;
 }
 
 .post-signature {
-    font-size: 17px;
-    color: #666;
+    font-size: var(--font-size-small);
+    color: var(--gray);
     margin-bottom: 15px;
 }
 
@@ -251,23 +313,60 @@ footer p,
 }
 
 .post-body {
-    margin-top: 50px;
+    margin-top: var(--spacing-large);
 }
 
 .bit-author-name {
-    font-size: 19px;
-    color: slategray;
+    font-size: var(--font-size-medium);
+    color: var(--slategray);
 }
 
 #photos {
-    margin: 100px;
+    margin: var(--spacing-xl);
 }
 
 .photo {
     width: 400px;
     height: 400px;
-    margin: 10px;
-    border-radius: 5%;
+    margin: var(--spacing-small);
+    border-radius: var(--border-radius-small);
+}
+
+#projects {
+    margin: var(--spacing-xl) auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-medium);
+    max-width: 1200px;
+    width: 100%;
+}
+
+.project-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-item a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+}
+
+.project {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--border-radius-small);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid var(--primary-color);
+}
+
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .error-message {
@@ -306,13 +405,28 @@ footer p,
     }
 
     #photos {
-        margin: 50px;
+        margin: var(--spacing-large);
     }
 
     .photo {
         width: 300px;
         height: 300px;
-        margin: 10px;
+        margin: var(--spacing-small);
+    }
+
+    #projects {
+        margin: var(--spacing-large);
+        gap: var(--spacing-small);
+        justify-content: center;
+    }
+
+    .project-item {
+        justify-content: center;
+    }
+
+    .project {
+        width: 250px;
+        height: 150px;
     }
 }
 
@@ -323,7 +437,7 @@ footer p,
 
     .timeline-item {
         width: 85%;
-        padding: 20px;
+        padding: var(--spacing-medium);
     }
 
     .timeline-block,
@@ -334,8 +448,8 @@ footer p,
 
     #bits,
     #posts {
-        margin: 50px 10px;
-        padding: 0 20px;
+        margin: var(--spacing-large) 10px;
+        padding: 0 var(--spacing-medium);
         text-align: left;
     }
 
@@ -348,8 +462,22 @@ footer p,
     }
 
     #post {
-        margin: 10px;
-        padding: 10px;
+        margin: var(--spacing-small);
+        padding: var(--spacing-small);
         width: 90%;
+    }
+
+    #projects {
+        margin: var(--spacing-large) var(--spacing-small);
+        justify-content: center;
+    }
+
+    .project-item {
+        justify-content: center;
+    }
+
+    .project {
+        width: 250px;
+        height: 150px;
     }
 }
